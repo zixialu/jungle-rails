@@ -159,7 +159,7 @@ cat1.products.first.ratings.create!({
 
 cat1.products.first.ratings.create!({
   user_id: user1.id,
-  description: 'Absolute garbage! Would not reccomend.',
+  description: 'Absolute garbage! Would not recommend.',
   rating: 1
 })
 
