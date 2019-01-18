@@ -1,0 +1,15 @@
+<div>
+  <h3>
+    Review by <%= User.find(rating.user_id).first_name %>:
+  </h3>
+
+  <div>
+    <% (1..rating.rating).each do |i| %>
+      ★
+    <% end %>
+  </div>
+
+  <div>
+    <%= rating.description %>
+  </div>
+</div>
