@@ -21,6 +21,19 @@ end
 
 # Let's do this ...
 
+## USERS
+
+puts "Re-creating Users ..."
+
+User.destroy_all
+
+user1 = User.create!({
+  first_name: 'Bobert',
+  last_name: 'Thompkins',
+  email: 'bobthompkins@gmail.com',
+  password_digest: '$2a$10$kywJGu9vX861c6WP2AQ01uWDm5g2BB16JnS9g2aEKYIpWHKiB7hp6'
+})
+
 ## CATEGORIES
 
 puts "Finding or Creating Categories ..."
@@ -132,5 +145,16 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+##  RATINGS
+
+puts "Re-creating Ratings"
+
+Rating.destroy_all
+
+cat1.products.first.ratings.create!({
+  user_id: user1.id,
+  description: 'Wowee!',
+  rating: 5
+})
 
 puts "DONE!"
