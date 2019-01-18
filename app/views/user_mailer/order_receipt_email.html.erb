@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Thank you for your order!</h1>
+    <p>
+      You have successfully made an order of $<%= @order.total_cents / 100.0 %>:
+    </p>
+    <ul>
+      <% LineItem.where(order_id: @order.id).each do |item| %>
+        <li>
+          <%= Product.find(item.product_id).name %> x<%= item.quantity %>
+        </li>
+      <% end %>
+    </ul>
+  </body>
+</html>
