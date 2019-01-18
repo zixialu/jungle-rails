@@ -1,15 +1,20 @@
-<div>
-  <h3>
-    Review by <%= User.find(rating.user_id).first_name %>:
-  </h3>
+<div class="row panel panel-default">
+  <div class="panel-body">
+    <h3>
+      Review by <%= User.find(rating.user_id).first_name %>:
+    </h3>
 
-  <div>
-    <% (1..rating.rating).each do |i| %>
-      ★
-    <% end %>
-  </div>
+    <div>
+      <% (1..rating.rating).each do |i| %>
+        ★
+      <% end %>
+      <% ((rating.rating + 1)..5).each do |i| %>
+        ☆
+      <% end %>
+    </div>
 
-  <div>
-    <%= rating.description %>
+    <div>
+      <%= rating.description %>
+    </div>
   </div>
 </div>

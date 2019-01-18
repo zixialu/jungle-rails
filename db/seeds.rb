@@ -157,4 +157,10 @@ cat1.products.first.ratings.create!({
   rating: 5
 })
 
+cat1.products.first.ratings.create!({
+  user_id: user1.id,
+  description: 'Absolute garbage! Would not reccomend.',
+  rating: 1
+})
+
 puts "DONE!"
