@@ -12,7 +12,6 @@ class RatingsController < ApplicationController
     )
 
     if @rating.save
-      # redirect to "/products/#{params[:product_id]}"
       redirect_to :back
     end
   end

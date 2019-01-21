@@ -28,7 +28,11 @@
 
     <div class="row">
       <%= render 'new_rating' %>
-      <%= render @ratings %>
+      <%=
+        render @ratings
+          .sort_by { |rating| rating.created_at }
+          .reverse
+      %>
     </div>
 
   </article>
