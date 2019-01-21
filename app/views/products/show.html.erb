@@ -27,7 +27,7 @@
     </div>
 
     <div class="row">
-      <%= render 'new_rating' %>
+      <%= render 'new_rating', product: @product %>
       <%=
         render @ratings
           .sort_by { |rating| rating.created_at }
