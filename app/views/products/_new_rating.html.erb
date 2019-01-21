@@ -1,0 +1,30 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+    <%= form_for [@product, Rating.new] do |f| %>
+
+      <% if f.object.errors.any? %>
+        <div class="alert alert-danger">
+          <strong>The following errors prevented saving:</strong>
+          <ul>
+            <% f.object.errors.full_messages.each do |error| %>
+              <li><%= error %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="form-group col-sm-1">
+        <%= f.label :rating %>
+        <%= range_field(:rating, :rating, in: 1..5) %>
+      </div>
+
+      <div class="form-group col-sm-11">
+        <%= f.label 'Write a Review:' %>
+        <%= f.text_field :description, class: 'form-control' %>
+      </div>
+
+      <%= f.submit 'Submit Review', class: 'btn btn-primary' %>
+
+    <% end %>
+  </div>
+</div>
